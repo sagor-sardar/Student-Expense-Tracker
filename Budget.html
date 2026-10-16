@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Set and manage monthly budgets with Student Expense Tracker.">
+    <title>Budget Management | Student Expense Tracker</title>
+</head>
+
+<body>
+
+    
+    <header>
+        <h1>Student Expense Tracker</h1>
+        <p>Track your money. Manage your future.</p>
+
+        
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Transactions</a></li>
+                <li><a href="#" aria-current="page">Budget</a></li>
+                
+                <li><a href="#">Login</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <hr>
+
+    <!-- Main Content -->
+    <main>
+
+       
+        <section aria-labelledby="page-title">
+            <h2 id="page-title">Budget Management</h2>
+            <p>
+                Plan your monthly spending, set category-wise budget limits,
+                and monitor your expenses to maintain better financial habits.
+            </p>
+
+            <p>
+                <a href="add-transaction.html">+ Add Transaction</a>
+                |
+                <a href="transactions.html">View Transactions</a>
+                |
+                <a href="reports.html">View Reports</a>
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- Budget Summary Cards -->
+        <section aria-labelledby="summary-title">
+            <h2 id="summary-title">Budget Overview</h2>
+
+            <div>
+                <h3>Total Monthly Budget</h3>
+                <p id="total-budget">0.00</p>
+            </div>
+
+            <div>
+                <h3>Total Amount Spent</h3>
+                <p id="total-spent">0.00</p>
+            </div>
+
+            <div>
+                <h3>Remaining Budget</h3>
+                <p id="remaining-budget">0.00</p>
+            </div>
+
+            <div>
+                <h3>Budget Categories</h3>
+                <p id="budget-category-count">0</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- Set Monthly Budget -->
+        <section aria-labelledby="budget-form-title">
+            <h2 id="budget-form-title">Set Monthly Budget</h2>
+
+            <p>
+                Complete the form below to define a spending limit
+                for a specific category and month.
+            </p>
+
+            <form action="#" method="get">
+
+                <div>
+                    <label for="budget-month">Budget Month *</label>
+                    <input
+                        type="month"
+                        id="budget-month"
+                        name="budget_month"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="budget-category">Expense Category *</label>
+                    <select
+                        id="budget-category"
+                        name="category"
+                        required
+                    >
+                        <option value="">Select a category</option>
+                        <option value="food">Food and Dining</option>
+                        <option value="transport">Transportation</option>
+                        <option value="education">Education</option>
+                        <option value="accommodation">Accommodation</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="shopping">Shopping</option>
+                        <option value="health">Health and Medical</option>
+                        <option value="utilities">Utilities and Bills</option>
+                        <option value="personal-care">Personal Care</option>
+                        <option value="communication">Communication</option>
+                        <option value="other">Other Expenses</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="budget-limit">Budget Limit (BDT) *</label>
+                    <input
+                        type="number"
+                        id="budget-limit"
+                        name="budget_limit"
+                        placeholder="Enter your budget limit"
+                        min="0.01"
+                        step="0.01"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="budget-notes">Notes (Optional)</label>
+                    <textarea
+                        id="budget-notes"
+                        name="notes"
+                        rows="4"
+                        maxlength="500"
+                        placeholder="Add notes about your budget..."
+                    ></textarea>
+                </div>
+
+                <div>
+                    <button type="submit">Save Budget</button>
+                    <button type="reset">Reset Form</button>
+                </div>
+
+            </form>
+        </section>
+
+        <hr>
+
+        <!-- Budget Summary Table -->
+        <section aria-labelledby="budget-table-title">
+            <h2 id="budget-table-title">Monthly Budget Summary</h2>
+
+            <p>
+                Review your budget limits and spending for each category.
+            </p>
+
+            <div>
+                <table>
+                    <caption>Category-wise monthly budget overview</caption>
+
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Budget Limit (BDT)</th>
+                            <th scope="col">Amount Spent (BDT)</th>
+                            <th scope="col">Remaining (BDT)</th>
+                            <th scope="col">Budget Status</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="budget-list">
+
+                        <!-- Sample Budget 1 -->
+                        <tr>
+                            <td>1</td>
+                            <td>Food and Dining</td>
+                            <td>3,000.00</td>
+                            <td>1,200.00</td>
+                            <td>1,800.00</td>
+                            <td>Within Budget</td>
+                            <td>
+                                <a href="budget.html?edit=1"
+                                   aria-label="Edit food budget">
+                                    Edit
+                                </a>
+
+                                <button
+                                    type="button"
+                                    aria-label="Delete food budget"
+                                >
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+
+                        
+                        <tr>
+                            <td>2</td>
+                            <td>Transportation</td>
+                            <td>1,500.00</td>
+                            <td>600.00</td>
+                            <td>900.00</td>
+                            <td>Within Budget</td>
+                            <td>
+                                <a href="budget.html?edit=2"
+                                   aria-label="Edit transportation budget">
+                                    Edit
+                                </a>
+
+                                <button
+                                    type="button"
+                                    aria-label="Delete transportation budget"
+                                >
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+
+                        
+                        <tr>
+                            <td>3</td>
+                            <td>Education</td>
+                            <td>2,000.00</td>
+                            <td>2,200.00</td>
+                            <td>-200.00</td>
+                            <td>Over Budget</td>
+                            <td>
+                                <a href="#"
+                                   aria-label="Edit education budget">
+                                    Edit
+                                </a>
+
+                                <button
+                                    type="button"
+                                    aria-label="Delete education budget"
+                                >
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+
+                       
+
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <th scope="row" colspan="2">Total</th>
+                            <td>6,500.00</td>
+                            <td>4,000.00</td>
+                            <td>2,500.00</td>
+                            <td colspan="2">Sample Summary</td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </div>
+        </section>
+
+        <hr>
+
+
+    </main>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Student Expense Tracker. All rights reserved.</p>
+        <p>Designed to help students manage their finances.</p>
+    </footer>
+
+</body>
+</html>
