@@ -1,274 +1,142 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-    <title>Transaction History | Student Expense Tracker</title>
+    <meta charset="UTF-8">
+    <title>Transaction History</title>
 </head>
-
 <body>
 
-    
     <header>
         <h1>Student Expense Tracker</h1>
-        <p>Track your money. Manage your future.</p>
+        <p>Track your money and manage your expenses.</p>
 
-       
-        <nav aria-label="Main Navigation">
-            <ul>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Transactions</a></li>
-                <li><a href="#" aria-current="page">Budget</a></li>
-                
-                <li><a href="#">Login</a></li>
-                
-            </ul>
+        <nav>
+            <a href="#">Dashboard</a> |
+            <a href="#">Transactions</a> |
+            <a href="#">Budget</a>
+            <a href="#">Login</a>
         </nav>
     </header>
 
     <hr>
 
-    
     <main>
 
-       
-        <section aria-labelledby="page-title">
-            <h2 id="page-title">Transaction History</h2>
-            <p>
-                View and manage all your income and expense records
-                in one place.
-            </p>
-
-            <p>
-                <a href="add-transaction.html">+ Add New Transaction</a>
-            </p>
+        <section>
+            <h2>Transaction History</h2>
+            <p>View your income and expenses in one place.</p>
         </section>
 
         <hr>
 
-        
-        <section aria-labelledby="summary-title">
-            <h2 id="summary-title">Transaction Overview</h2>
+        <section>
+            <h2>Transaction Overview</h2>
 
             <div>
                 <h3>Total Transactions</h3>
-                <p id="total-transactions">0</p>
+                <p>3</p>
             </div>
 
             <div>
                 <h3>Total Income</h3>
-                <p id="total-income">0.00</p>
+                <p>5000 BDT</p>
             </div>
 
             <div>
                 <h3>Total Expenses</h3>
-                <p id="total-expenses">0.00</p>
+                <p>470 BDT</p>
             </div>
         </section>
 
         <hr>
 
-       
-        <section aria-labelledby="filter-title">
-            <h2 id="filter-title">Search and Filter Transactions</h2>
+        <section>
+            <h2>Search Transactions</h2>
 
-            <form action="transactions.html" method="get">
-
+            <form>
                 <div>
-                    <label for="search">Search by Description:</label>
-                    <input
-                        type="search"
-                        id="search"
-                        name="search"
-                        placeholder="Enter a keyword"
-                    >
-                </div>
-
-                <div>
-                    <label for="filter-type">Transaction Type:</label>
-                    <select id="filter-type" name="type">
+                    <label for="type">Transaction Type:</label>
+                    <select id="type">
                         <option value="">All Types</option>
                         <option value="income">Income</option>
                         <option value="expense">Expense</option>
                     </select>
                 </div>
+                <br>
 
                 <div>
-                    <label for="filter-category">Category:</label>
-                    <select id="filter-category" name="category">
+                    <label for="category">Category:</label>
+                    <select id="category">
                         <option value="">All Categories</option>
                         <option value="allowance">Allowance</option>
-                        <option value="scholarship">Scholarship</option>
-                        <option value="salary">Part-time Salary</option>
                         <option value="food">Food</option>
                         <option value="transport">Transportation</option>
                         <option value="education">Education</option>
-                        <option value="accommodation">Accommodation</option>
-                        <option value="entertainment">Entertainment</option>
-                        <option value="shopping">Shopping</option>
-                        <option value="health">Health</option>
                         <option value="other">Other</option>
                     </select>
                 </div>
+                <br>
 
                 <div>
-                    <label for="start-date">Start Date:</label>
-                    <input
-                        type="date"
-                        id="start-date"
-                        name="start_date"
-                    >
+                    <button type="submit">Search</button>
+                    <button type="reset">Reset</button>
                 </div>
-
-                <div>
-                    <label for="end-date">End Date:</label>
-                    <input
-                        type="date"
-                        id="end-date"
-                        name="end_date"
-                    >
-                </div>
-
-                <div>
-                    <button type="submit">Apply Filters</button>
-                    <button type="reset">Reset Filters</button>
-                </div>
-
             </form>
         </section>
 
         <hr>
 
-   
-        <section aria-labelledby="table-title">
-            <h2 id="table-title">All Transactions</h2>
+        <section>
+            <h2>All Transactions</h2>
 
             <div>
-                <table>
-                    <caption>List of recorded income and expenses</caption>
+                <table border="1" cellpadding="8">
+                    <tr>
+                        <th>No.</th>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Category</th>
+                        <th>Amount (BDT)</th>
+                        <th>Description</th>
+                    </tr>
 
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Date</th>
-                            <th scope="col">Type</th>
-                            <th scope="col">Category</th>
-                            <th scope="col">Amount (BDT)</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">Actions</th>
-                        </tr>
-                    </thead>
+                    <tr>
+                        <td>1</td>
+                        <td>01 Oct 2026</td>
+                        <td>Income</td>
+                        <td>Allowance</td>
+                        <td>5000</td>
+                        <td>Monthly family allowance</td>
+                    </tr>
 
-                    <tbody id="transaction-list">
+                    <tr>
+                        <td>2</td>
+                        <td>03 Oct 2026</td>
+                        <td>Expense</td>
+                        <td>Food</td>
+                        <td>350</td>
+                        <td>Lunch and snacks</td>
+                    </tr>
 
-                        
-                        <tr>
-                            <td>1</td>
-                            <td>
-                                <time datetime="2026-10-01">01 Oct 2026</time>
-                            </td>
-                            <td>Income</td>
-                            <td>Allowance</td>
-                            <td>৳5,000.00</td>
-                            <td>Monthly family allowance</td>
-                            <td>
-                                <a href="add-transaction.html?edit=1"
-                                   aria-label="Edit transaction 1">
-                                    Edit
-                                </a>
-
-                                <button
-                                    type="button"
-                                    aria-label="Delete transaction 1"
-                                >
-                                    Delete
-                                </button>
-                            </td>
-                        </tr>
-
-                        <!-- Sample Transaction 2 -->
-                        <tr>
-                            <td>2</td>
-                            <td>
-                                <time datetime="2026-10-03">03 Oct 2026</time>
-                            </td>
-                            <td>Expense</td>
-                            <td>Food</td>
-                            <td>350.00</td>
-                            <td>Lunch and snacks</td>
-                            <td>
-                                <a href="add-transaction.html?edit=2"
-                                   aria-label="Edit transaction 2">
-                                    Edit
-                                </a>
-
-                                <button
-                                    type="button"
-                                    aria-label="Delete transaction 2"
-                                >
-                                    Delete
-                                </button>
-                            </td>
-                        </tr>
-
-                        <!-- Sample Transaction 3 -->
-                        <tr>
-                            <td>3</td>
-                            <td>
-                                <time datetime="2026-10-05">05 Oct 2026</time>
-                            </td>
-                            <td>Expense</td>
-                            <td>Transportation</td>
-                            <td>120.00</td>
-                            <td>Bus fare to university</td>
-                            <td>
-                                <a href="add-transaction.html?edit=3"
-                                   aria-label="Edit transaction 3">
-                                    Edit
-                                </a>
-
-                                <button
-                                    type="button"
-                                    aria-label="Delete transaction 3"
-                                >
-                                    Delete
-                                </button>
-                            </td>
-                        </tr>
-
-                      
-
-                    </tbody>
-
+                    <tr>
+                        <td>3</td>
+                        <td>05 Oct 2026</td>
+                        <td>Expense</td>
+                        <td>Transportation</td>
+                        <td>120</td>
+                        <td>Bus fare to university</td>
+                    </tr>
                 </table>
             </div>
         </section>
-
-        <hr>
-
-        
-        <nav aria-label="Transaction table pagination">
-            <p>Page 1 of 1</p>
-
-            <button type="button" disabled>Previous</button>
-            <button type="button" aria-current="page">1</button>
-            <button type="button" disabled>Next</button>
-        </nav>
-
-        <hr>
-
-       
 
     </main>
 
     <hr>
 
-    <!-- Website Footer -->
     <footer>
-        <p>
-            &copy; 2026 Student Expense Tracker.
-            All rights reserved.
-        </p>
-        <p>Designed to help students manage their finances.</p>
+        <p>&copy; 2026 Student Expense Tracker. All rights reserved.</p>
     </footer>
 
 </body>
