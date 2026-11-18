@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget &amp; Reports - Student Expense Tracker</title>
+  <link rel="stylesheet" href="budget.css">
+</head>
+<body>
+
+  <!--HEADER-->
+  <header>
+    <h1>🎯 Budget &amp; Reports</h1>
+    <nav>
+      <a href="../Dashboard/index.html">Home</a>
+      <a href="../Dashboard/dashboard.html">Dashboard</a>
+      <a href="../Transaction/transactions.html">Transactions</a>
+      <a href="budget.html" class="active">Budget</a>
+      <a href="../Login/login.html">Login</a>
+      <a href="../Register/register.html">Register</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="layout">
+
+      <!--BUDGET FORM-->
+      <section class="card">
+        <h2 id="budgetTitle">Monthly Budget</h2>
+
+        <form id="budgetForm">
+          <label for="budgetMonth">Budget Month</label>
+          <input type="month" id="budgetMonth" required>
+
+          <label for="budgetCategory">Category</label>
+          <select id="budgetCategory" required></select>
+
+          <label for="budgetLimit">Budget Limit</label>
+          <input type="number" id="budgetLimit" min="1" step="0.01" placeholder="e.g. 3000" required>
+
+          <div class="button-row">
+            <button type="submit" id="saveButton">Save Budget</button>
+            <button type="reset" class="gray">Reset</button>
+          </div>
+        </form>
+      </section>
+
+      <!--BUDGET SUMMARY TABLE -->
+      <section class="card">
+        <h2>Budget Summary</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Month</th>
+              <th>Category</th>
+              <th>Limit</th>
+              <th>Spent</th>
+              <th>Remaining</th>
+              <th>Used</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="budgetBody">
+            <!-- rows are added by JavaScript -->
+          </tbody>
+        </table>
+      </section>
+
+    </div>
+
+    <!--REPORT-->
+    <section class="card report">
+      <h2>Expense Report</h2>
+      <p>See how much you earned and spent. Leave the dates empty to see everything.</p>
+
+      <div class="filter-row">
+        <div>
+          <label for="fromDate">From</label>
+          <input type="date" id="fromDate">
+        </div>
+        <div>
+          <label for="toDate">To</label>
+          <input type="date" id="toDate">
+        </div>
+        <div class="filter-buttons">
+          <button onclick="showReport()">Show Report</button>
+          <button class="gray" onclick="clearReportFilter()">Clear</button>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card-box income-box">
+          <p>Total Income</p>
+          <h3 id="totalIncome">0</h3>
+        </div>
+        <div class="card-box expense-box">
+          <p>Total Expense</p>
+          <h3 id="totalExpense">0</h3>
+        </div>
+        <div class="card-box balance-box">
+          <p>Balance</p>
+          <h3 id="totalBalance">0</h3>
+        </div>
+      </div>
+
+      <h3>Category-wise Expense</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Total Expense</th>
+          </tr>
+        </thead>
+        <tbody id="reportBody">
+         
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <script src="budget.js"></script>
+</body>
+</html>

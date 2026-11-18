@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transactions - Student Expense Tracker</title>
+  <link rel="stylesheet" href="transactions.css">
+</head>
+<body>
+
+  <!-- HEADER-->
+  <header>
+    <h1>💸 Student Expense Tracker</h1>
+    <nav>
+      <a href="../Dashboard/index.html">Home</a>
+      <a href="../Dashboard/dashboard.html">Dashboard</a>
+      <a href="transactions.html" class="active">Transactions</a>
+      <a href="../Budget/budget.html">Budget</a>
+      <a href="../Login/login.html">Login</a>
+      <a href="../Register/register.html">Register</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!--TOTAL CARDS-->
+    <section class="cards">
+      <div class="card-box income-box">
+        <p>Total Income</p>
+        <h2 id="totalIncome">0</h2>
+      </div>
+      <div class="card-box expense-box">
+        <p>Total Expense</p>
+        <h2 id="totalExpense">0</h2>
+      </div>
+      <div class="card-box balance-box">
+        <p>Balance</p>
+        <h2 id="totalBalance">0</h2>
+      </div>
+    </section>
+
+    <div class="layout">
+
+      <!---->
+      <section class="card">
+        <h2 id="formTitle">Add Transaction</h2>
+
+        <form id="transactionForm">
+          <label for="type">Type</label>
+          <select id="type" required>
+            <option value="Income">Income</option>
+            <option value="Expense">Expense</option>
+          </select>
+
+          <label for="amount">Amount</label>
+          <input type="number" id="amount" min="1" step="0.01" placeholder="e.g. 500" required>
+
+          <label for="category">Category</label>
+          <select id="category" required></select>
+
+          <label for="date">Date</label>
+          <input type="date" id="date" required>
+
+          <label for="description">Description</label>
+          <textarea id="description" rows="3" placeholder="Optional note"></textarea>
+
+          <div class="button-row">
+            <button type="submit" id="submitButton">Submit</button>
+            <button type="reset" class="gray">Reset</button>
+          </div>
+        </form>
+      </section>
+
+      <!---->
+      <section class="card">
+        <h2>Transaction History</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Type</th>
+              <th>Category</th>
+              <th>Amount</th>
+              <th>Description</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="transactionBody">
+            <!-- -->
+          </tbody>
+        </table>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="transactions.js"></script>
+</body>
+</html>
