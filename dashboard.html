@@ -1,395 +1,661 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Expense Tracker - Dashboard</title>
+    <title>Student Expense Tracker | Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
 </head>
+
 <body>
 
-<!-- HEADER -->
-<table width="100%" cellpadding="10">
-    <tr>
-        <td width="35%">
-            <h2>💳 Student Expense Tracker</h2>
-        </td>
-        <td width="40%">
-            <form action="#" method="get">
-                <input type="search" name="search"
-                       placeholder="Search transactions, categories..."
-                       size="45">
-                <button type="submit">Search</button>
-            </form>
-        </td>
-        <td align="center">🔔 Notifications</td>
-        <td align="center">
-            <img src="Sagor.jpg"
-                 alt="Sagor's profile picture"
-                 width="45" height="50">
-            <br>
-            <b>Shafiqur</b><br>
-            Student
-        </td>
-    </tr>
-</table>
+    <!-- HEADER -->
+    <header class="topbar">
 
-<hr>
+        <a href="dashboard.html" class="brand">
+            <p class="brand-icon">💳</p>
 
-<!-- MAIN LAYOUT -->
-<table width="100%" cellpadding="10" cellspacing="0">
-<tr valign="top">
+            <p class="brand-name">
+                <b>Student</b>
+                <b>Expense Tracker</b>
+            </p>
+        </a>
 
-    <!-- LEFT SIDEBAR -->
-    <td width="15%">
-        <h3>Navigation</h3>
-        <hr>
+        <form id="searchForm" class="search" action="#" method="get">
+            <input
+                id="searchInput"
+                type="search"
+                name="search"
+                placeholder="Search transactions, categories...🔎"
+            >
+            <button type="submit">Search</button>
+        </form>
 
-        <p>🏠 <a href="https://www.facebook.com/share/1FXG1BDLLT/?mibextid=wwXIfr">Dashboard</a></p>
-        <p>🔄 <a href="transactions.html">Transactions</a></p>
-        <p>➕ <a href="add-transaction.html">Add Transaction</a></p>
-        <p>🗓️ <a href="budget.html">Budget</a></p>
-        <p>📊 <a href="reports.html">Reports</a></p>
+        <a href="#" id="notification" class="notification" aria-label="Notifications">🔔</a>
 
-        <br>
-        <hr>
+        <div class="user-profile">
+            <img src="Sagor.jpg" alt="Profile Picture">
 
-        <p>👤 <a href="profile.html">Profile</a></p>
-        <p>⚙️ <a href="settings.html">Settings</a></p>
-        <p>🚪 <a href="login.html">Logout</a></p>
-    </td>
+            <div>
+                <b>Shafiqur</b>
+                <p>Student</p>
+            </div>
+        </div>
 
-    <!-- CENTER CONTENT -->
-    <td width="60%">
+    </header>
 
-        <!-- WELCOME SECTION -->
-        <table width="100%" cellpadding="10">
-            <tr>
-                <td>
+
+    <div class="layout">
+
+
+        <!-- LEFT SIDEBAR -->
+        <div class="sidebar">
+
+            <p class="nav-heading">MENU</p>
+
+            <nav>
+                <a href="dashboard.html" class="nav-link active">
+                    🏠 Dashboard
+                </a>
+
+                <a href="../Transaction/transactions.html" class="nav-link">
+                   🔄 Transactions
+                </a>
+
+                <a href="../Transaction/transactions.html#transactionForm" class="nav-link">
+                   ➕ Add Transaction
+                </a>
+
+
+                <a href="../Budget/budget.html" class="nav-link">
+                    🗓️ Budget
+                </a>
+
+                <a href="../Login/login.html" class="nav-link">
+                    📊 Login
+                </a>
+
+                <a href="../Register/register.html" class="nav-link">
+                       Register
+                </a>
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <p class="nav-heading">ACCOUNT</p>
+
+                <nav>
+                    <a href="profile.html" class="nav-link">
+                        👤 Profile
+                    </a>
+
+                    <a href="settings.html" class="nav-link">
+                        ⚙️ Settings
+                    </a>
+
+                    <a href="../Login/login.html" class="nav-link">
+                        🚪 Logout
+                    </a>
+                </nav>
+
+            </div>
+
+
+            <div class="sidebar-tip">
+                <p>💡</p>
+                <b>Save smarter!</b>
+
+                <p>
+                    Small savings today can build a better tomorrow.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+
+
+            <!-- WELCOME CARD -->
+            <section class="welcome-card">
+
+                <div class="welcome-text">
+
+                    <p class="eyebrow">STUDENT FINANCE</p>
+
                     <h1>Welcome Back, Shafiqur! 👋</h1>
 
                     <p>
-                        Track your income and expenses, 
-                        manage your budget, and stay on 
-                        top of your financial goals.
+                        Track your income and expenses, manage your budget,
+                        and stay on top of your financial goals.
                     </p>
 
-                    <p>
-                        📅 Today:
-                        <time datetime="2026-10-15">
-                            October 15, 2026
-                        </time>
+                    <p id="today" class="today">
+                        📅 Today: October 25, 2026
                     </p>
-                </td>
 
-                <td align="right" width="140">
-                    <img src="Shafiqur.jpeg"
-                         alt="Sagor"
-                         width="120" height="150">
-                </td>
-            </tr>
-        </table>
+                </div>
 
-        <hr>
+                <img
+                    src="Shafiqur.jpeg"
+                    alt="Student Picture"
+                    class="welcome-image"
+                >
 
-        <!-- FINANCIAL OVERVIEW -->
-        <h2>Financial Overview</h2>
+            </section>
 
-        <table width="100%" border="4" cellpadding="10"
-               cellspacing="5">
-            <tr>
-                <td width="33%">
-                    <h3>🟢 Total Income</h3>
+
+            <!-- FINANCIAL SUMMARY -->
+            <section class="summary-grid">
+
+                <div class="summary-card income">
+
+                    <div class="card-top">
+                        <p class="card-icon">↗</p>
+                        <p class="card-label">Total Income</p>
+                    </div>
+
                     <h2>৳ 12,500</h2>
-                    <p>+ ৳ 2,500 from last month</p>
-                </td>
 
-                <td width="33%">
-                    <h3>🔴 Total Expenses</h3>
+                    <p class="positive">
+                        ↑ ৳ 2,500 from last month
+                    </p>
+
+                </div>
+
+
+                <div class="summary-card expenses">
+
+                    <div class="card-top">
+                        <p class="card-icon">↘</p>
+                        <p class="card-label">Total Expenses</p>
+                    </div>
+
                     <h2>৳ 8,750</h2>
-                    <p>+ ৳ 1,200 from last month</p>
-                </td>
 
-                <td width="34%">
-                    <h3>🔵 Current Balance</h3>
+                    <p class="negative">
+                        ↑ ৳ 1,200 from last month
+                    </p>
+
+                </div>
+
+
+                <div class="summary-card balance">
+
+                    <div class="card-top">
+                        <p class="card-icon">৳</p>
+                        <p class="card-label">Current Balance</p>
+                    </div>
+
                     <h2>৳ 3,750</h2>
-                    <p>Your available balance</p>
-                </td>
-            </tr>
-        </table>
 
-        <br>
+                    <p class="muted">
+                        Your available balance
+                    </p>
 
-        <!-- RECENT TRANSACTIONS -->
-        <table width="100%" cellpadding="5">
-            <tr>
-                <td><h2>🕘 Recent Transactions</h2></td>
-                <td align="right">
-                    <a href="transactions.html">View All</a>
-                </td>
-            </tr>
-        </table>
+                </div>
 
-        <table width="100%" border="1" cellpadding="8"
-               cellspacing="0">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Type</th>
-                    <th>Category</th>
-                    <th>Description</th>
-                    <th>Amount</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
+            </section>
 
-            <tbody>
-                <tr>
-                    <td>Oct 15, 2026</td>
-                    <td>🔴 Expense</td>
-                    <td>Food</td>
-                    <td>Lunch at cafeteria</td>
-                    <td>-৳ 150</td>
-                    <td>
-                        <button type="button">Edit</button>
-                        <button type="button">Delete</button>
-                    </td>
-                </tr>
 
-                <tr>
-                    <td>Oct 14, 2026</td>
-                    <td>🟢 Income</td>
-                    <td>Others</td>
-                    <td>Freelance work</td>
-                    <td>+৳ 2,000</td>
-                    <td>
-                        <button type="button">Edit</button>
-                        <button type="button">Delete</button>
-                    </td>
-                </tr>
+            <!-- RECENT TRANSACTIONS -->
+            <section class="panel">
 
-                <tr>
-                    <td>Oct 13, 2026</td>
-                    <td>🔴 Expense</td>
-                    <td>Transport</td>
-                    <td>Bus fare</td>
-                    <td>-৳ 60</td>
-                    <td>
-                        <button type="button">Edit</button>
-                        <button type="button">Delete</button>
-                    </td>
-                </tr>
+                <div class="panel-heading">
 
-                <tr>
-                    <td>Oct 12, 2026</td>
-                    <td>🔴 Expense</td>
-                    <td>Education</td>
-                    <td>Course materials</td>
-                    <td>-৳ 1,200</td>
-                    <td>
-                        <button type="button">Edit</button>
-                        <button type="button">Delete</button>
-                    </td>
-                </tr>
+                    <div>
+                        <h2>Recent Transactions</h2>
+                        <p>Your latest financial activity</p>
+                    </div>
 
-                <tr>
-                    <td>Oct 10, 2026</td>
-                    <td>🟢 Income</td>
-                    <td>Allowance</td>
-                    <td>Monthly allowance</td>
-                    <td>+৳ 5,000</td>
-                    <td>
-                        <button type="button">Edit</button>
-                        <button type="button">Delete</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                    <a href="transactions.html" class="view-link">
+                        View All →
+                    </a>
 
-        <br>
+                </div>
 
-        <!-- CATEGORY OVERVIEW -->
-        <h2>▦ Category Overview</h2>
 
-        <table width="100%" border="1" cellpadding="8"
-        cellspacing="3">
-            <thead>
-                <tr>
-                    <th>Category</th>
-                    <th>Total Spent</th>
-                    <th>Percentage</th>
-                </tr>
-            </thead>
+                <div class="table-wrapper">
 
-            <tbody>
-                <tr>
-                    <td>🍴 Food</td>
-                    <td>৳ 2,800</td>
-                    <td>32%</td>
-                </tr>
-                <tr>
-                    <td>🚌 Transport</td>
-                    <td>৳ 1,575</td>
-                    <td>18%</td>
-                </tr>
-                <tr>
-                    <td>🛍️ Shopping</td>
-                    <td>৳ 1,300</td>
-                    <td>15%</td>
-                </tr>
-                <tr>
-                    <td>📚 Education</td>
-                    <td>৳ 1,050</td>
-                    <td>12%</td>
-                </tr>
-                <tr>
-                    <td>💡 Utilities</td>
-                    <td>৳ 875</td>
-                    <td>10%</td>
-                </tr>
-                <tr>
-                    <td>📦 Others</td>
-                    <td>৳ 1,150</td>
-                    <td>13%</td>
-                </tr>
-            </tbody>
-        </table>
+                    <table id="transactionTable" class="data-table">
 
-        <br>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Type</th>
+                                <th>Category</th>
+                                <th>Description</th>
+                                <th>Amount</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
 
-        <!-- RECENT ACTIVITIES -->
-        <h2>🕒 Recent Activities</h2>
+                        <tbody id="transactionBody">
 
-        <ul>
-            <li>
-                <b>Income Added</b>
-                <p>You added a new income transaction.</p>
-                <small>2 hours ago</small>
-            </li>
+                            <tr>
+                                <td>Oct 15, 2026</td>
 
-            <li>
-                <b>Expense Added</b>
-                <p>You added a new expense transaction.</p>
-                <small>5 hours ago</small>
-            </li>
+                                <td>
+                                    <b class="expense-tag">● Expense</b>
+                                </td>
 
-            <li>
-                <b>Category Updated</b>
-                <p>You updated the Food category.</p>
-                <small>1 day ago</small>
-            </li>
+                                <td>🍴 Food</td>
+                                <td>Lunch at cafeteria</td>
 
-            <li>
-                <b>Budget Created</b>
-                <p>You set a monthly budget.</p>
-                <small>2 days ago</small>
-            </li>
+                                <td class="amount-red">-৳ 150</td>
 
-            <li>
-                <b>Report Generated</strong>
-                <p>You generated a report.</p>
-                <small>3 days ago</small>
-            </li>
-        </ul>
+                                <td>
+                                    <button type="button" class="edit-btn">
+                                        Edit
+                                    </button>
 
-    </td>
+                                    <button type="button" class="delete-btn">
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
 
-    <!-- RIGHT SIDEBAR -->
-    <td width="25%">
 
-        <!-- QUICK ACTIONS -->
-        <h2>⚡ Quick Actions</h2>
-        <hr>
+                            <tr>
+                                <td>Oct 14, 2026</td>
 
-        <p>
-            <a href="add-transaction.html">
-                ➕ Add New Transaction
-            </a>
-        </p>
+                                <td>
+                                    <b class="income-tag">● Income</b>
+                                </td>
 
-        <p>
-            <a href="transactions.html">
-                📋 View All Transactions
-            </a>
-        </p>
+                                <td>📦 Others</td>
+                                <td>Freelance work</td>
 
-        <p>
-            <a href="budget.html">
-                🎯 Set Monthly Budget
-            </a>
-        </p>
+                                <td class="amount-green">+৳ 2,000</td>
 
-        <p>
-            <a href="reports.html">
-                📑 View Reports
-            </a>
-        </p>
+                                <td>
+                                    <button type="button" class="edit-btn">
+                                        Edit
+                                    </button>
 
-        <br>
-        <hr>
+                                    <button type="button" class="delete-btn">
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
 
-        <!-- MONTHLY BUDGET -->
-        <h2>🗓️ Monthly Budget</h2>
 
-        <p>Total Budget</p>
-        <h2>৳ 10,000</h2>
+                            <tr>
+                                <td>Oct 13, 2026</td>
 
-        <p>Total Spent: ৳ 6,800</p>
-        <p>Budget Used: 68%</p>
+                                <td>
+                                    <b class="expense-tag">● Expense</b>
+                                </td>
 
-        <progress value="68" max="100">68%</progress>
+                                <td>🚌 Transport</td>
+                                <td>Bus fare</td>
 
-        <p><a href="budget.html">View All</a></p>
+                                <td class="amount-red">-৳ 60</td>
 
-        <br>
-        <hr>
+                                <td>
+                                    <button type="button" class="edit-btn">
+                                        Edit
+                                    </button>
 
-        <!-- UPCOMING REMINDERS -->
-        <h2>🔔 Upcoming Reminders</h2>
+                                    <button type="button" class="delete-btn">
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
 
-        <fieldset>
-            <legend>📚 Tuition Fee</legend>
-            <p>Due: October 25, 2026</p>
-            <strong>৳ 5,000</strong>
-        </fieldset>
 
-        <br>
+                            <tr>
+                                <td>Oct 12, 2026</td>
 
-        <fieldset>
-            <legend>💡 Internet Bill</legend>
-            <p>Due: October 28, 2026</p>
-            <strong>৳ 850</strong>
-        </fieldset>
+                                <td>
+                                    <b class="expense-tag">● Expense</b>
+                                </td>
 
-        <p><a href="budget.html">View All Reminders</a></p>
+                                <td>📚 Education</td>
+                                <td>Course materials</td>
 
-        <br>
-        <hr>
+                                <td class="amount-red">-৳ 1,200</td>
 
-        <!-- QUICK TIPS -->
-        <h2>💡 Quick Tips</h2>
+                                <td>
+                                    <button type="button" class="edit-btn">
+                                        Edit
+                                    </button>
 
-        <fieldset>
-            <p>
-                Try to keep your monthly expenses within
-                your budget to save more money!
-            </p>
-        </fieldset>
+                                    <button type="button" class="delete-btn">
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
 
-    </td>
 
-</tr>
-</table>
+                            <tr>
+                                <td>Oct 10, 2026</td>
 
-<!-- FOOTER -->
-<hr>
+                                <td>
+                                    <b class="income-tag">● Income</b>
+                                </td>
 
-<footer>
-    <p align="center">
-        &copy; 2026 Student Expense Tracker.
-        All rights reserved.
-    </p>
-</footer>
+                                <td>🎁 Allowance</td>
+                                <td>Monthly allowance</td>
 
+                                <td class="amount-green">+৳ 5,000</td>
+
+                                <td>
+                                    <button type="button" class="edit-btn">
+                                        Edit
+                                    </button>
+
+                                    <button type="button" class="delete-btn">
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- CATEGORY OVERVIEW -->
+            <section class="panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <h2>Category Overview</h2>
+                        <p>See how your expenses are distributed</p>
+                    </div>
+
+                    <a href="reports.html" class="view-link">
+                        View Reports →
+                    </a>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table class="data-table">
+
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Total Spent</th>
+                                <th>Percentage</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>🍴 Food</td>
+                                <td>৳ 2,800</td>
+                                <td>32%</td>
+                            </tr>
+
+                            <tr>
+                                <td>🚌 Transport</td>
+                                <td>৳ 1,575</td>
+                                <td>18%</td>
+                            </tr>
+
+                            <tr>
+                                <td>🛍️ Shopping</td>
+                                <td>৳ 1,300</td>
+                                <td>15%</td>
+                            </tr>
+
+                            <tr>
+                                <td>📚 Education</td>
+                                <td>৳ 1,050</td>
+                                <td>12%</td>
+                            </tr>
+
+                            <tr>
+                                <td>💡 Utilities</td>
+                                <td>৳ 875</td>
+                                <td>10%</td>
+                            </tr>
+
+                            <tr>
+                                <td>📦 Others</td>
+                                <td>৳ 1,150</td>
+                                <td>13%</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- RECENT ACTIVITIES -->
+            <section class="panel">
+
+                <div class="panel-heading">
+                    <div>
+                        <h2>Recent Activities</h2>
+                        <p>Recent updates on your account</p>
+                    </div>
+                </div>
+
+
+                <div class="activity">
+
+                    <p class="activity-icon green-icon">↗</p>
+
+                    <div class="activity-content">
+                        <b>Income Added</b>
+                        <p>You added a new income transaction.</p>
+                        <small>2 hours ago</small>
+                    </div>
+
+                </div>
+
+
+                <div class="activity">
+
+                    <p class="activity-icon red-icon">↘</p>
+
+                    <div class="activity-content">
+                        <b>Expense Added</b>
+                        <p>You added a new expense transaction.</p>
+                        <small>5 hours ago</small>
+                    </div>
+
+                </div>
+
+
+                <div class="activity">
+
+                    <p class="activity-icon blue-icon">✎</p>
+
+                    <div class="activity-content">
+                        <b>Category Updated</b>
+                        <p>You updated the Food category.</p>
+                        <small>1 day ago</small>
+                    </div>
+
+                </div>
+
+
+                <div class="activity">
+
+                    <p class="activity-icon purple-icon">▣</p>
+
+                    <div class="activity-content">
+                        <b>Budget Created</b>
+                        <p>You set a monthly budget.</p>
+                        <small>2 days ago</small>
+                    </div>
+
+                </div>
+
+
+                <div class="activity">
+
+                    <p class="activity-icon orange-icon">▥</p>
+
+                    <div class="activity-content">
+                        <b>Report Generated</b>
+                        <p>You generated a report.</p>
+                        <small>3 days ago</small>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- RIGHT SIDEBAR -->
+        <div class="right-sidebar">
+
+
+            <!-- QUICK ACTIONS -->
+            <section class="panel side-panel">
+
+                <h2>⚡ Quick Actions</h2>
+
+                <a href="add-transaction.html"
+                   class="action-link primary-action">
+
+                    <b>＋</b>
+                    <p>Add New Transaction</p>
+
+                </a>
+
+
+                <a href="transactions.html" class="action-link">
+
+                    <b>▤</b>
+                    <p>View All Transactions</p>
+
+                </a>
+
+
+                <a href="budget.html" class="action-link">
+
+                    <b>◎</b>
+                    <p>Set Monthly Budget</p>
+
+                </a>
+
+
+                <a href="reports.html" class="action-link">
+
+                    <b>▥</b>
+                    <p>View Reports</p>
+
+                </a>
+
+            </section>
+
+
+            <!-- MONTHLY BUDGET -->
+            <section class="panel side-panel">
+
+                <h2>🗓️ Monthly Budget</h2>
+
+                <p class="muted">Total Budget</p>
+
+                <h2 id="budgetAmount" class="budget-amount">৳ 10,000</h2>
+
+
+                <div class="budget-details">
+                    <p>Total Spent</p>
+                    <b>৳ 6,800</b>
+                </div>
+
+
+                <div class="progress-track">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+
+
+                <div class="budget-details">
+                    <p>Budget Used</p>
+                    <b>68%</b>
+                </div>
+
+
+                <a href="budget.html" class="view-link">
+                    View Budget →
+                </a>
+
+            </section>
+
+
+            <!-- UPCOMING REMINDERS -->
+            <section class="panel side-panel">
+
+                <h2>🔔 Upcoming Reminders</h2>
+
+
+                <div class="reminder">
+
+                    <p class="reminder-icon">📚</p>
+
+                    <div>
+                        <b>Tuition Fee</b>
+                        <p>Due: October 25, 2026</p>
+                        <b>৳ 5,000</b>
+                    </div>
+
+                </div>
+
+
+                <div class="reminder">
+
+                    <p class="reminder-icon">💡</p>
+
+                    <div>
+                        <b>Internet Bill</b>
+                        <p>Due: October 28, 2026</p>
+                        <b>৳ 850</b>
+                    </div>
+
+                </div>
+
+
+                <a href="budget.html" class="view-link">
+                    View All Reminders →
+                </a>
+
+            </section>
+
+
+            <!-- QUICK TIPS -->
+            <section class="panel side-panel tip-panel">
+
+                <h2>💡 Quick Tips</h2>
+
+                <p>
+                    Try to keep your monthly expenses within your budget
+                    to save more money!
+                </p>
+
+            </section>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        © 2026 Student Expense Tracker. All rights reserved.
+    </footer>
+<script src="dashboard.js"></script>
 </body>
 </html>

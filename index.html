@@ -1,115 +1,359 @@
 
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Student Expense Tracker</title>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Expense Tracker | Home</title>
 
+    <link rel="stylesheet" href="index.css">
+</head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <h1>💳 Student Expense Tracker</h1>
-        <p><i>Your money, your goals, your future.</i></p>
+    <!-- HEADER -->
+    <header class="home-header">
+        <a href="index.html" class="home-brand">
+            <div class="home-logo">💳</div>
+            <div>
+                <p>Student Expense Tracker</p>
+                <small>Your money, your goals, your future.</small>
+            </div>
+        </a>
 
-        <p>
-            <a href="login.html">Login</a> |
-            <a href="register.html">Create Account</a>
-        </p>
+        <nav class="home-nav">
+            <a href="index.html" class="nav-current">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="../Transaction/transactions.html">Transactions</a>
+            <a href="../Budget/budget.html">Budget</a>
+            <a href="../Login/login.html">Login</a>
+            <a href="../Register/register.html">Register</a>
+        </nav>
+
+        <div class="home-auth">
+            <a href="../Login/login.html" class="login-link">Login</a>
+            <a href="../Register/register.html" class="register-button">Create Account →</a>
+        </div>
     </header>
 
-    <hr>
-
-    <!-- Welcome Section -->
+    <!-- HERO SECTION -->
     <main>
-        <h1>Manage Your Money. Build Better Habits.</h1>
+        <section class="hero">
+            <div class="hero-content">
 
-        <p>
-            Welcome to Student Expense Tracker!
-            This website helps students track their income,
-            manage expenses, and plan monthly budgets.
-        </p>
+                <p class="hero-label">WELCOME TO STUDENT EXPENSE TRACKER</p>
 
-        <p>Take control of your spending and make every taka count.</p>
+                <h1>
+                    Manage Your Money.<br>
+                    <span>Build Better Habits.</span>
+                </h1>
 
-        <p>
-            <a href="dashboard.html">Open My Dashboard →</a>
-        </p>
+                <p class="hero-description">
+                    Take control of your finances with a simple and organized
+                    expense tracking system. Student Expense Tracker helps
+                    students track their income, manage daily expenses, and
+                    plan monthly budgets more effectively.
+                </p>
 
-        <p>
-            <a href="register.html">Get Started</a> |
-            <a href="login.html">Already have an account?</a>
-        </p>
+                <div class="hero-points">
+                    <p>✓ Easy to Use</p>
+                    <p>✓ Track Income & Expenses</p>
+                    <p>✓ Plan Budget</p>
+                    <p>✓ Stay Organized</p>
+                </div>
 
-        <hr>
+                <div class="hero-buttons">
+                    <a href="../Register/register.html" class="primary-button">
+                        Get Started →
+                    </a>
 
-        <!-- Features -->
-        <h2>Everything You Need in One Place</h2>
-        <p>Organize your finances with these useful features.</p>
+                    <a href="dashboard.html" class="secondary-button">
+                        📊 Open My Dashboard →
+                    </a>
+                </div>
 
-        <h3>💵 Track Income</h3>
-        <p>Record your allowance, scholarship, and other income.</p>
+                <p class="hero-description">
+                    Already have an account?
+                    <a href="login.html"><b>Login here</b></a>
+                </p>
 
-        <h3>🧾 Manage Expenses</h3>
-        <p>Record daily spending and organize expenses by category.</p>
+            </div>
 
-        <h3>🎯 Plan Your Budget</h3>
-        <p>Set a monthly budget and track your spending.</p>
+            <!-- FINANCE PREVIEW CARD -->
+            <div class="hero-visual">
 
-        <h3>📋 Transaction History</h3>
-        <p>View your previous income and expense records.</p>
+                <div class="visual-decoration decoration-one"></div>
+                <div class="visual-decoration decoration-two"></div>
 
-        <h3>📊 Expense Reports</h3>
-        <p>Check how much you spend in different categories.</p>
+                <div class="finance-card">
 
-        <h3>🔔 Bill Reminders</h3>
-        <p>Keep track of upcoming payments and important bills.</p>
+                    <div class="finance-card-header">
+                        <div>
+                            <p class="small-label">YOUR FINANCIAL OVERVIEW</p>
+                            <h3>Smart Money Management</h3>
+                        </div>
+                        <div class="finance-icon">💰</div>
+                    </div>
 
-        <hr>
+                    <div class="balance-box">
+                        <p class="small-label">Available Balance</p>
+                        <h2 id="balanceAmount">৳ 3,750</h2>
+                        <p class="balance-note">✓ Keep building good habits</p>
+                    </div>
 
-        <!-- How It Works -->
-        <h2>How It Works</h2>
+                    <div class="finance-summary">
 
-        <h3>Step 1: Add Transactions</h3>
-        <p>Add your income and daily expenses.</p>
+                        <div class="mini-card income-mini">
+                            <p>💵 Total Income</p>
+                            <h3 id="incomeAmount">৳ 12,500</h3>
+                        </div>
 
-        <h3>Step 2: Set Your Budget</h3>
-        <p>Decide how much money you want to spend each month.</p>
+                        <div class="mini-card expense-mini">
+                            <p>🧾 Total Expenses</p>
+                            <h3 id="expenseAmount">৳ 8,750</h3>
+                        </div>
 
-        <h3>Step 3: Check Your Progress</h3>
-        <p>Review your transactions and spending summaries.</p>
+                    </div>
 
-        <hr>
+                    <div class="budget-preview">
+                        <div class="budget-heading">
+                            <span>Monthly Budget</span>
+                            <b id="budgetPercentage">68% Used</b>
+                        </div>
 
-        <!-- Get Started -->
-        <h2>Ready to Manage Your Money?</h2>
+                        <div class="budget-bar">
+                            <div id="budgetFill" class="budget-bar-fill"></div>
+                        </div>
 
-        <p>Start building better financial habits with our website.</p>
+                        <p id="budgetText" class="small-label">
+                            ৳ 6,800 spent from ৳ 10,000
+                        </p>
+                    </div>
 
-        <p>
-            <a href="dashboard.html">Go to Dashboard →</a>
-        </p>
+                    <div class="finance-footer">
+                        📈 Track your spending. Plan your future.
+                    </div>
 
+                </div>
+            </div>
+        </section>
+
+        <!-- HIGHLIGHTS -->
+        <section class="highlights">
+
+            <div class="highlight-item">
+                <div class="highlight-icon">💵</div>
+                <div>
+                    <h3>Track Income</h3>
+                    <p>Manage your earnings</p>
+                </div>
+            </div>
+
+            <div class="highlight-item">
+                <div class="highlight-icon">🧾</div>
+                <div>
+                    <h3>Manage Expenses</h3>
+                    <p>Organize daily spending</p>
+                </div>
+            </div>
+
+            <div class="highlight-item">
+                <div class="highlight-icon">🎯</div>
+                <div>
+                    <h3>Plan Your Budget</h3>
+                    <p>Reach your financial goals</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- FEATURES SECTION -->
+        <section class="features-section" id="features">
+
+            <div class="section-heading">
+                <p class="section-label">OUR FEATURES</p>
+                <h2>Everything You Need in One Place</h2>
+                <p>
+                    Organize your finances with useful tools
+                    designed especially for students.
+                </p>
+            </div>
+
+            <div class="features-grid">
+
+                <div class="feature-card">
+                    <div class="feature-icon icon-green">💵</div>
+                    <h3>Track Income</h3>
+                    <p>
+                        Record your allowance, scholarship,
+                        part-time earnings, and other income.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon icon-purple">🧾</div>
+                    <h3>Manage Expenses</h3>
+                    <p>
+                        Record daily spending and organize
+                        expenses by different categories.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon icon-red">🎯</div>
+                    <h3>Plan Your Budget</h3>
+                    <p>
+                        Set a monthly spending limit and
+                        keep track of your budget.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon icon-blue">📋</div>
+                    <h3>Transaction History</h3>
+                    <p>
+                        View previous income and expense
+                        records whenever you need them.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon icon-orange">📊</div>
+                    <h3>Expense Reports</h3>
+                    <p>
+                        Review spending summaries and
+                        understand where your money goes.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon icon-yellow">🔔</div>
+                    <h3>Bill Reminders</h3>
+                    <p>
+                        Keep track of upcoming payments
+                        and important bills.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section class="steps-section" id="how-it-works">
+
+            <div class="section-heading">
+                <p class="section-label">SIMPLE PROCESS</p>
+                <h2>How It Works</h2>
+                <p>
+                    Start managing your money in three simple steps.
+                </p>
+            </div>
+
+            <div class="steps-grid">
+
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h3>Add Transactions</h3>
+                    <p>
+                        Record your income and daily expenses
+                        to maintain an organized financial history.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h3>Set Your Budget</h3>
+                    <p>
+                        Decide how much money you want to spend
+                        and plan your monthly expenses.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h3>Check Your Progress</h3>
+                    <p>
+                        Review your transactions and summaries
+                        to improve your spending habits.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="cta-section">
+
+            <div>
+                <p class="cta-label">START YOUR JOURNEY</p>
+                <h2>Ready to Manage Your Money?</h2>
+
+                <p>
+                    Start building better financial habits today.
+                    Take the first step towards smarter spending
+                    and a more organized financial future.
+                </p>
+
+                <a href="register.html" class="cta-button">
+                    Create Your Account →
+                </a>
+
+                <p>
+                    Already registered?
+                    <a href="login.html"><b>Login here</b></a>
+                </p>
+            </div>
+
+        </section>
     </main>
 
-    <hr>
+    <!-- FOOTER -->
+    <footer class="home-footer">
 
-    <!-- Footer -->
-    <footer>
-        <h3>💳 Student Expense Tracker</h3>
-        <p>Helping students manage money smarter.</p>
+        <div class="footer-main">
 
-        <p>
-            <a href="dashboard.html">Dashboard</a> |
-            <a href="login.html">Login</a> |
-            <a href="register.html">Register</a>
-        </p>
+            <div>
+                <div class="footer-brand">
+                    <div class="home-logo">💳</div>
+                    Student Expense Tracker
+                </div>
 
-        <hr>
+                <p class="footer-description">
+                    Helping students manage money smarter,
+                    organize expenses, and build better
+                    financial habits for the future.
+                </p>
+            </div>
 
-        <p>Copyright 2026 Student Expense Tracker.</p>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="dashboard.html">Dashboard</a></p>
+                <p><a href="#features">Features</a></p>
+                <p><a href="#how-it-works">How It Works</a></p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Your Account</h3>
+                <p><a href="login.html">Login</a></p>
+                <p><a href="register.html">Create Account</a></p>
+                <p>Student Finance Management</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p id="footerYear">
+                Copyright &copy; 2026 Student Expense Tracker.
+                All rights reserved.
+            </p>
+            <p>Made for smarter student finances 💙</p>
+        </div>
+
     </footer>
+
+    <!-- JAVASCRIPT LINK -->
+     <script src="../shared-data.js"></script>
+    <script src="index.js"></script>
 
 </body>
 </html>
