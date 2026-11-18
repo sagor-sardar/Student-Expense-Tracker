@@ -1,0 +1,375 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    color: #20234a;
+    background: linear-gradient(135deg, #edf2ff, #e8f8f4);
+}
+
+.topbar {
+    min-height: 72px;
+    padding: 14px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    background: #ffffff;
+    box-shadow: 0 3px 15px rgba(36, 39, 90, 0.08);
+}
+
+.brand {
+    color: #25235f;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: #4d5274;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 9px 13px;
+    border-radius: 20px;
+    transition: 0.25s;
+}
+
+nav a:hover, nav a.nav-active {
+    color: #ffffff;
+    background: #6255c7;
+}
+
+nav a.nav-register {
+    color: #ffffff;
+    background: #18ad83;
+}
+
+nav a.nav-register:hover {
+    background: #118b69;
+}
+
+.auth-page {
+    min-height: calc(100vh - 72px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 18px;
+}
+
+.auth-shell {
+    width: 100%;
+    max-width: 990px;
+    min-height: 570px;
+    display: grid;
+    grid-template-columns: 42% 58%;
+    overflow: hidden;
+    border-radius: 24px;
+    background: #ffffff;
+    box-shadow: 0 18px 45px rgba(45, 48, 105, 0.16);
+}
+
+.color-panel {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 48px 38px;
+    color: white;
+    background: linear-gradient(145deg, #168fbd 0%, #5145c8 48%, #32116f 100%);
+}
+
+.panel-content {
+    position: relative;
+    z-index: 2;
+}
+
+.panel-logo {
+    width: 62px;
+    height: 62px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.19);
+    font-size: 30px;
+    margin-bottom: 28px;
+}
+
+.panel-content h2 {
+    font-size: 29px;
+    line-height: 1.25;
+    margin-bottom: 16px;
+}
+
+.panel-content p {
+    color: #e4e8ff;
+    line-height: 1.7;
+    font-size: 15px;
+    max-width: 290px;
+}
+
+.mini-stats {
+    display: flex;
+    gap: 12px;
+    margin-top: 34px;
+}
+
+.mini-stats div {
+    padding: 13px 15px;
+    border: 1px solid rgba(255,255,255,0.28);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.12);
+}
+
+.mini-stats strong, .mini-stats span {
+    display: block;
+}
+
+.mini-stats strong {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.mini-stats span {
+    color: #e4e8ff;
+    font-size: 11px;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.10);
+}
+
+.shape-one {
+    width: 220px;
+    height: 220px;
+    right: -95px;
+    top: -65px;
+}
+
+.shape-two {
+    width: 145px;
+    height: 145px;
+    right: -45px;
+    bottom: 35px;
+    border: 18px solid rgba(255,255,255,0.16);
+    background: transparent;
+}
+
+.shape-three {
+    width: 65px;
+    height: 65px;
+    left: -25px;
+    bottom: 25px;
+}
+
+.form-panel {
+    padding: 48px 65px 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.user-icon {
+    width: 66px;
+    height: 66px;
+    margin: 0 auto 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 30px;
+    background: linear-gradient(135deg, #e3e8ff, #d9fff0);
+    border: 2px solid #d9ddff;
+}
+
+.form-heading h1 {
+    color: #32116f;
+    font-size: 30px;
+    margin-bottom: 9px;
+}
+
+.form-heading p {
+    color: #77809a;
+    font-size: 14px;
+}
+
+form > label {
+    display: block;
+    color: #30385e;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 16px 0 8px;
+}
+
+.input-wrap {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 13px;
+    border: 1px solid #d6d9ed;
+    border-radius: 10px;
+    background: #f8f9fd;
+    transition: 0.2s;
+}
+
+.input-wrap:focus-within {
+    border-color: #6658ce;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(102,88,206,0.12);
+}
+
+.input-wrap span {
+    color: #777ba0;
+}
+
+.input-wrap input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #26294d;
+    font-size: 14px;
+}
+
+.eye-btn {
+    border: none;
+    color: #6255c7;
+    background: transparent;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin: 17px 0 8px;
+    font-size: 13px;
+}
+
+.check-label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #626984;
+}
+
+.check-label input {
+    accent-color: #18ad83;
+}
+
+.form-options a, .switch-text a {
+    color: #6255c7;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.form-options a:hover, .switch-text a:hover {
+    color: #159b75;
+    text-decoration: underline;
+}
+
+.message {
+    min-height: 20px;
+    margin: 7px 0 9px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background: linear-gradient(100deg, #6255c7, #39127d);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s;
+    box-shadow: 0 7px 15px rgba(75, 52, 165, 0.2);
+}
+
+.submit-btn:hover {
+    background: linear-gradient(100deg, #18ad83, #118a70);
+    transform: translateY(-2px);
+}
+
+.switch-text {
+    margin-top: 22px;
+    text-align: center;
+    color: #727993;
+    font-size: 14px;
+}
+
+.demo-note {
+    margin-top: 12px;
+    text-align: center;
+    color: #9aa0b4;
+    font-size: 11px;
+}
+
+@media (max-width: 760px) {
+    .auth-shell {
+        max-width: 520px;
+        grid-template-columns: 1fr;
+    }
+    .color-panel {
+        min-height: 220px;
+        padding: 30px;
+    }
+    .panel-logo {
+        margin-bottom: 15px;
+    }
+    .panel-content h2 {
+        font-size: 24px;
+    }
+    .mini-stats {
+        margin-top: 18px;
+    }
+    .form-panel {
+        padding: 35px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .topbar {
+        justify-content: center;
+    }
+    nav {
+        justify-content: center;
+        gap: 4px;
+    }
+    nav a {
+        padding: 8px 9px;
+        font-size: 12px;
+    }
+    .form-panel {
+        padding: 30px 20px;
+    }
+    .form-options {
+        flex-wrap: wrap;
+    }
+}

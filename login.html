@@ -1,51 +1,76 @@
-
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Student Expense Tracker - Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Student Expense Tracker</title>
+    <link rel="stylesheet" href="login.css">
 </head>
-
 <body>
+    <header class="topbar">
+        <a class="brand" href="../Dashboard/index.html">💳 Student Expense Tracker</a>
+        <nav>
+            <!-- <a href="../Dashboard/index.html">Home</a>
+            <a href="../Dashboard/dashboard.html">Dashboard</a>
+            <a href="../Transaction/transactions.html">Transactions</a>
+            <a href="../Budget/budget.html">Budget</a> -->
+            <a class="nav-active" href="login.html">Login</a>
+            <a class="nav-register" href="../Register/register.html">Register</a>
+        </nav>
+    </header>
 
-    <h1>Student Expense Tracker</h1>
+    <main class="auth-page">
+        <section class="auth-shell login-shell">
+            <div class="color-panel">
+                <div class="shape shape-one"></div>
+                <div class="shape shape-two"></div>
+                <div class="shape shape-three"></div>
+                <div class="panel-content">
+                    <div class="panel-logo">💳</div>
+                    <h2>Manage Your Money<br>With Confidence</h2>
+                    <p>Track your income, control expenses and stay within your budget.</p>
+                    <div class="mini-stats">
+                        <div><strong>Track</strong><span>Daily expenses</span></div>
+                        <div><strong>Plan</strong><span>Monthly budget</span></div>
+                    </div>
+                </div>
+            </div>
 
-    <h2>Login</h2>
+            <div class="form-panel">
+                <div class="form-heading">
+                    <div class="user-icon">👤</div>
+                    <h1>Welcome Back</h1>
+                    <p>Login to your Student Expense Tracker</p>
+                </div>
 
-    <p>Welcome back! Please login to your account.</p>
+                <form id="loginForm">
+                    <label for="email">Email Address</label>
+                    <div class="input-wrap">
+                        <span>✉</span>
+                        <input type="email" id="email" placeholder="Enter your email">
+                    </div>
 
-    <form action="index.html" method="get">
+                    <label for="password">Password</label>
+                    <div class="input-wrap">
+                        <span>🔒</span>
+                        <input type="password" id="password" placeholder="Enter your password">
+                        <button type="button" class="eye-btn" id="togglePassword">Show</button>
+                    </div>
 
-        <label for="email">Email:</label>
-        <br>
-        <input type="email"
-          name="email"
-          id="email" 
-         required>
+                    <div class="form-options">
+                        <label class="check-label"><input type="checkbox" id="remember"> Remember Me</label>
+                        <a href="#" id="forgotLink">Forgot Password?</a>
+                    </div>
 
-        <br><br>
+                    <p id="message" class="message"></p>
+                    <button type="submit" class="submit-btn">Login</button>
+                </form>
 
-        <label for="password">Password:</label>
-        <br>
-        <input type="password" 
-        id="password" 
-        name="password" required>
-
-        <br><br>
-
-        <input type="submit" value="Login">
-
-    </form>
-
-    <p>
-        Don't have an account?
-        <a href="register.html">Register here</a>
-    </p>
-
-    <p>
-        <a href="index.html">Back to Home</a>
-    </p>
-
+                <p class="switch-text">Don't have an account? <a href="register.html">Create Account</a></p>
+                <p class="demo-note">New here? Register first to create a demo account.</p>
+            </div>
+        </section>
+    </main>
+    <script src="login.js"></script>
 </body>
-
 </html>
